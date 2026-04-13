@@ -1,0 +1,91 @@
+{
+  "name": "proc-lock-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Secure Proctored Offline Examination Platform",
+  "main": "main.js",
+  "author": "Samarth Agarwal",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "builder": "^5.0.0",
+    "electron-updater": "^6.8.3",
+    "express": "^4.22.1",
+    "firebase": "^12.12.0"
+  },
+  "build": {
+    "artifactName": "ProcLock-Admin-Setup-${version}.${ext}",
+    "appId": "com.samarth.proc-lock-admin",
+    "productName": "ProcLock Admin",
+    "files": [
+      "server/**/*",
+      "logo.png",
+      "main.js",
+      "index.html",
+      "node_modules/**",
+      "renderer.js",
+      "style.css",
+      "preload.js",
+      "firebase-auth.js"
+    ],
+    "nativeRebuilder": "legacy",
+    "win": {
+      "legalTrademarks": "SA ki company",
+      "icon": "build/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "build/icons/icon.ico",
+      "uninstallerIcon": "build/icons/icon.ico",
+      "installerHeaderIcon": "build/icons/icon.ico"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.education"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png",
+      "category": "Education"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "btechSamarth",
+        "repo": "ProcLock-Admin"
+      }
+    ]
+  }
+}

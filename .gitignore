@@ -1,0 +1,7 @@
+node_modules/
+*.exe
+dist/
+records/
+tests/
+main.js
+renderer.js
