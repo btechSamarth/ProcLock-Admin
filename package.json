@@ -2,7 +2,7 @@
   "name": "proc-lock-admin",
   "version": "1.0.0",
   "private": true,
-  "description": "A Secure Proctored Offline Examination Platform",
+  "description": "A Secure Proctored Offline Examination Platform : Admin Panel",
   "main": "main.js",
   "author": "Samarth Agarwal",
   "scripts": {
